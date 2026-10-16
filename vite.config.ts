@@ -13,7 +13,7 @@ import react from '@vitejs/plugin-react';
  *
  * No environment variable is required: the fallback below always works.
  */
-const REPO_NAME = 'coredesk';
+const REPO_NAME = 'https://github.com/m-jamai/CoreDesk';
 
 export default defineConfig(({ command, isPreview }) => ({
   plugins: [react()],
