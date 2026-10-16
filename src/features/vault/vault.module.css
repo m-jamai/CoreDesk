@@ -1,0 +1,83 @@
+.vault { flex: 1; min-height: 0; display: flex; flex-direction: column; background: #0b0c0d; }
+
+.demoBar {
+  display: flex; align-items: center; gap: 8px;
+  padding: 6px 16px;
+  border-bottom: 1px solid var(--line);
+  background: #111214;
+  font-size: var(--fs-xs);
+  color: var(--text-2);
+  flex: none;
+}
+.demoBar svg { color: var(--accent); flex: none; }
+.demoBar strong { color: var(--text-1); font-weight: 600; }
+
+/* PIN gate */
+.gate { flex: 1; min-height: 0; overflow: auto; display: grid; place-items: center; padding: 24px 16px; }
+.gateBox { width: 100%; max-width: 320px; display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center; }
+.lockIcon {
+  width: 44px; height: 44px;
+  display: grid; place-items: center;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  color: var(--text-1);
+}
+.gateTitle { font-size: var(--fs-lg); font-weight: 600; }
+.gateSub { font-size: var(--fs-sm); color: var(--text-2); margin-top: 4px; }
+.dots { display: flex; gap: 14px; height: 14px; align-items: center; }
+.dot { width: 10px; height: 10px; border-radius: 50%; border: 1px solid var(--line-focus); transition: background var(--t-fast), border-color var(--t-fast); }
+.dotFilled { background: var(--text-0); border-color: var(--text-0); }
+.shake { animation: shake 360ms var(--ease); }
+.shake .dot { border-color: var(--danger); }
+@keyframes shake { 20%, 60% { transform: translateX(-6px); } 40%, 80% { transform: translateX(6px); } }
+.error { color: var(--danger); font-size: var(--fs-xs); min-height: 16px; }
+.keypad { display: grid; grid-template-columns: repeat(3, 64px); gap: 10px; }
+.key {
+  height: 52px;
+  border-radius: var(--r-3);
+  border: 1px solid var(--line);
+  background: var(--bg-1);
+  color: var(--text-0);
+  font-size: var(--fs-xl);
+  font-weight: 400;
+  font-family: var(--font-sans);
+  transition: background var(--t-fast), border-color var(--t-fast);
+  display: grid; place-items: center;
+}
+.key:hover { background: var(--bg-3); border-color: var(--line-strong); }
+.key:active { background: var(--bg-4); }
+.keyGhost { background: transparent; border-color: transparent; color: var(--text-2); font-size: var(--fs-sm); }
+.keyGhost:hover { background: var(--bg-2); border-color: transparent; color: var(--text-0); }
+.hint { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--text-2); border: 1px dashed var(--line-strong); border-radius: var(--r-2); padding: 4px 10px; }
+.hint b { color: var(--accent); font-weight: 500; letter-spacing: 0.15em; }
+.unlocking { display: flex; align-items: center; gap: 8px; font-size: var(--fs-sm); color: var(--text-1); min-height: 16px; }
+
+/* Browser */
+.browser { flex: 1; min-height: 0; display: grid; grid-template-columns: 220px minmax(0, 1fr); }
+.folders { border-right: 1px solid var(--line); display: flex; flex-direction: column; min-height: 0; background: #0f1011; }
+.foldersHead { display: flex; align-items: center; justify-content: space-between; height: var(--toolbar-h); padding: 0 6px 0 14px; border-bottom: 1px solid var(--line); flex: none; }
+.folderList { flex: 1; overflow-y: auto; padding: 6px; display: flex; flex-direction: column; gap: 1px; }
+.folder {
+  display: flex; align-items: center; gap: 8px;
+  border-radius: var(--r-2);
+  padding-right: 2px;
+  color: var(--text-1);
+  transition: background var(--t-fast);
+}
+.folder:hover { background: var(--bg-2); }
+.folderActive, .folderActive:hover { background: var(--bg-3); color: var(--text-0); }
+.folderBtn { flex: 1; min-width: 0; display: flex; align-items: center; gap: 8px; height: 30px; padding: 0 8px; border: 0; background: none; color: inherit; font-size: var(--fs-sm); text-align: left; }
+.folderBtn span:nth-child(2) { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.folderBtn svg { color: var(--text-2); flex: none; }
+.count { font-family: var(--font-mono); font-size: var(--fs-2xs); color: var(--text-2); }
+.main { display: flex; flex-direction: column; min-width: 0; min-height: 0; }
+.docIcon { color: var(--text-2); flex: none; }
+.lockBtn { border-color: var(--line-focus); }
+
+@media (max-width: 760px) {
+  .browser { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr); }
+  .folders { border-right: 0; border-bottom: 1px solid var(--line); }
+  .foldersHead { display: none; }
+  .folderList { flex-direction: row; overflow-x: auto; padding: 6px 8px; }
+  .folder { flex: none; }
+}

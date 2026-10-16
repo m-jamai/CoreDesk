@@ -1,0 +1,83 @@
+/* CoreDesk design tokens — dark-first graphite palette, one restrained accent. */
+:root {
+  color-scheme: dark;
+
+  /* Surfaces (darkest → lightest) */
+  --bg-0: #0e0f11;          /* app backdrop / canvas */
+  --bg-1: #141518;          /* sidebar, top bar */
+  --bg-2: #191a1e;          /* panels, cards */
+  --bg-3: #202227;          /* raised / hover */
+  --bg-4: #282a30;          /* pressed / selected neutral */
+
+  /* Lines */
+  --line: #25272d;
+  --line-strong: #33363d;
+  --line-focus: #4a4d55;
+
+  /* Text */
+  --text-0: #ecebe6;        /* primary off-white */
+  --text-1: #b3b2ad;        /* secondary */
+  --text-2: #7b7b78;        /* tertiary / meta */
+  --text-3: #55565a;        /* disabled */
+
+  /* Accent — signal amber */
+  --accent: #e2a53c;
+  --accent-hover: #ecb354;
+  --accent-ink: #17130a;    /* text on accent */
+  --accent-dim: rgba(226, 165, 60, 0.12);
+  --accent-line: rgba(226, 165, 60, 0.45);
+
+  /* Semantic (used sparingly) */
+  --danger: #e0645a;
+  --danger-dim: rgba(224, 100, 90, 0.12);
+  --success: #6fae84;
+  --success-dim: rgba(111, 174, 132, 0.12);
+  --info: #7aa4c9;
+
+  /* Tones for tags / board cards — muted, used as small markers only */
+  --tone-neutral: #8a8b90;
+  --tone-amber: #e2a53c;
+  --tone-teal: #5fb3a6;
+  --tone-blue: #7aa4c9;
+  --tone-violet: #a08bd1;
+  --tone-rose: #d47f8e;
+
+  /* Type */
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "SF Mono", "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+
+  --fs-2xs: 10px;
+  --fs-xs: 11px;
+  --fs-sm: 12px;
+  --fs-md: 13px;
+  --fs-lg: 15px;
+  --fs-xl: 18px;
+  --fs-2xl: 22px;
+
+  /* Spacing (4px grid) */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 20px;
+  --s-6: 24px;
+  --s-8: 32px;
+
+  /* Radii — deliberately small */
+  --r-1: 3px;
+  --r-2: 4px;
+  --r-3: 6px;
+
+  /* Layout */
+  --sidebar-w: 216px;
+  --sidebar-w-rail: 56px;
+  --topbar-h: 44px;
+  --toolbar-h: 40px;
+
+  /* Motion */
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --t-fast: 90ms;
+  --t-med: 160ms;
+
+  --shadow-pop: 0 10px 30px rgba(0, 0, 0, 0.45), 0 0 0 1px var(--line-strong);
+}
